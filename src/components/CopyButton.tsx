@@ -10,7 +10,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({ textToCopy }) => {
     const copyToClipboard = () => {
         navigator.clipboard.writeText(textToCopy).then(() => {
             setCopySuccess('Copied!');
-            setTimeout(() => setCopySuccess(null), 2000); // 2 seconds later reset message
+            setTimeout(() => setCopySuccess(null), 1500);
         });
     };
 

@@ -17,3 +17,7 @@ body {
 .container {
     margin: 0 auto;
 }
+
+code {
+    user-select: text;
+}

@@ -1,6 +1,36 @@
 import React from 'react';
+import { useRef } from 'react';
+import { IoLogoJavascript } from 'react-icons/io';
+import { SiTypescript } from 'react-icons/si';
+import { toast } from 'react-toastify';
 
 const DocumentationContent: React.FC = () => {
+
+    const codeRefJS = useRef<HTMLPreElement>(null);
+    const codeRefTS = useRef<HTMLPreElement>(null);
+
+    const handleCopyCodeJSX = () => {
+        const codeToCopy = codeRefJS.current?.textContent || '';
+        navigator.clipboard.writeText(codeToCopy)
+            .then(() => {
+                toast.success('Code copied to clipboard!');
+            })
+            .catch(err => {
+                toast.error('Failed to copy code:', err);
+            });
+    };
+
+    const handleCopyCodeTSX = () => {
+        const codeToCopy = codeRefTS.current?.textContent || '';
+        navigator.clipboard.writeText(codeToCopy)
+            .then(() => {
+                toast.success('Code copied to clipboard!');
+            })
+            .catch(err => {
+                toast.error('Failed to copy code:', err);
+            });
+    };
+
     return (
         <div className="p-8">
             <section id="introduction" className="mb-12">
@@ -207,6 +237,110 @@ function myCustomPlugin() {
 export default defineConfig({
   plugins: [myCustomPlugin()],
 })`}
+                    </code>
+                </pre>
+            </section>
+
+            <section id="ext-config-jsx" className="mb-12">
+                <h2 className="text-3xl font-semibold mb-4 flex items-center gap-3 text-yellow-500"><IoLogoJavascript />  EXT config Java Script XML</h2>
+                <p className="text-lg">
+                    EXT Config is a Vite configuration designed to extend the core functionality of Vite,
+                    primarily through the integration of a custom console plugin. This plugin, currently named GEADEZIST,
+                    adds a custom server listening event, where it prints a unique message
+                    to the console once the server is up and running.
+                </p>
+
+                <button
+                    onClick={handleCopyCodeJSX}
+                    className="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+                >
+                    Copy Code
+                </button>
+
+                <pre ref={codeRefJS} className="bg-gray-800 text-white p-4 rounded mt-4 overflow-x-auto">
+                    <code style={{ "userSelect": "none" }}>
+                        {`import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+// Console plugin
+const PROJECT = () => {
+  return {
+    name: 'console-plugin',
+    configureServer(server) {
+      server.httpServer?.once('listening', () => {
+        console.log('\\n ODAMCHALAR, 🫠 🫠 😴\\n PROJECT\\n');
+      });
+    },
+  };
+};
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react(), PROJECT()],
+  define: {
+    global: 'window',
+  },
+  server: {
+    host: '0.0.0.0',
+    port: 99,
+  },
+});
+`}
+                    </code>
+                </pre>
+            </section>
+
+            <section id="ext-config-tsx" className="mb-12">
+                <h2 className="text-3xl font-semibold mb-4 flex items-center gap-3 text-blue-700"><SiTypescript />  EXT config for TypeScript</h2>
+                <p className="text-lg">
+                    EXT Config is a Vite configuration designed to extend the core functionality of Vite,
+                    primarily through the integration of a custom console plugin. This plugin, currently named GEADEZIST,
+                    adds a custom server listening event, where it prints a unique message
+                    to the console once the server is up and running.
+                </p>
+
+                <button
+                    onClick={handleCopyCodeTSX}
+                    className="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+                >
+                    Copy Code
+                </button>
+
+                <pre ref={codeRefTS} className="bg-gray-800 text-white p-4 rounded mt-4 overflow-x-auto">
+                    <code style={{ "userSelect": "none" }}>
+                        {`import { defineConfig, Plugin, ViteDevServer } from 'vite';
+import react from '@vitejs/plugin-react';
+// import path from "path"
+
+// console plugin
+const PROJECT = (): Plugin => {
+  return {
+    name: 'console-plugin',
+    configureServer(server: ViteDevServer) {
+      server.httpServer?.once('listening', () => {
+        console.log('\\n ODAMCHALAR, 🫠 🫠 😴\\n PROJECT\\n');
+      });
+    },
+  };
+};
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react(), PROJECT()],
+//   resolve: {
+//     alias: {
+//       "@": path.resolve(__dirname, "./src"),
+//     },
+//   },
+  define: {
+    global: 'window',
+  },
+  server: {
+    host: '0.0.0.0',
+    port: 99
+  }
+});
+`}
                     </code>
                 </pre>
             </section>
