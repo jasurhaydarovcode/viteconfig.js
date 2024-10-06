@@ -33,7 +33,7 @@ export default defineConfig({
 })`;
 
     return (
-        <div className='container'>
+        <div>
             <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
                 <div className="flex py-10 items-center flex-col sm:flex-row">
                     <img className="w-24 sm:w-32 mb-4 sm:mb-0" src={ViteLogoSvg} alt="Vite Logo" />
