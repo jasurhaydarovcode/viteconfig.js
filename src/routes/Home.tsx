@@ -9,7 +9,7 @@ function Home() {
       </Helmet>
 
       <Hero />
-      
+
     </div>
   )
 }

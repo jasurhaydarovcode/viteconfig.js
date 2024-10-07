@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import DocumentationContent from '../components/DocumentationContent';
-import Helmet from 'react-helmet'
+import Helmet from 'react-helmet';
 
 const Documentation: React.FC = () => {
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+    const toggleSidebar = () => {
+        setSidebarOpen(!isSidebarOpen);
+    };
+
     const sections = [
         { id: 'introduction', title: 'Introduction' },
         { id: 'installation', title: 'Installation' },
@@ -26,11 +32,20 @@ const Documentation: React.FC = () => {
                 <title>Documentation</title>
             </Helmet>
 
-            <div className="flex min-h-screen">
-                <Sidebar sections={sections} />
-                <main className="flex-1 bg-gray-100 overflow-auto">
+            {/* Container flex */}
+            <div className="flex min-h-screen lg:flex-row">
+                {/* Sidebar */}
+                <Sidebar sections={sections} isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+                <div className="flex-1 bg-gray-100 overflow-auto">
+                    {/* Burger tugmasi faqat mobil ekranlarda */}
+                    <button
+                        className="p-4 m-4 bg-gray-800 text-white lg:hidden"
+                        onClick={toggleSidebar}
+                    >
+                        ☰
+                    </button>
                     <DocumentationContent />
-                </main>
+                </div>
             </div>
         </div>
     );

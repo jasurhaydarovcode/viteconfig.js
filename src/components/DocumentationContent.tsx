@@ -306,13 +306,13 @@ export default defineConfig({
                     Copy Code
                 </button>
 
+                <p className='text-xl pb-2 pt-5 font-semibold text-red-400'>Note that an error occurs in this configuration in TypeScript, because in such a situation that type is not given in the console, you need to install the `@types/node` package</p>
+
                 <pre ref={codeRefTS} className="bg-gray-800 text-white p-4 rounded mt-4 overflow-x-auto">
                     <code style={{ "userSelect": "none" }}>
                         {`import { defineConfig, Plugin, ViteDevServer } from 'vite';
 import react from '@vitejs/plugin-react';
-// import path from "path"
 
-// console plugin
 const PROJECT = (): Plugin => {
   return {
     name: 'console-plugin',
@@ -327,11 +327,6 @@ const PROJECT = (): Plugin => {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), PROJECT()],
-//   resolve: {
-//     alias: {
-//       "@": path.resolve(__dirname, "./src"),
-//     },
-//   },
   define: {
     global: 'window',
   },
