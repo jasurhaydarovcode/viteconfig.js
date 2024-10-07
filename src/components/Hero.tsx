@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ViteLogoSvg from '../assets/vite.svg';
 import { Link } from 'react-router-dom';
-import CopyButton from './CopyButton'; // Import the CopyButton component
+import CopyButton from './CopyButton';
 import GitHubButton from 'react-github-btn';
 
 const Hero: React.FC = () => {

@@ -1,8 +1,9 @@
 import React from 'react';
-import { SiVite } from 'react-icons/si';
+// import { SiVite } from 'react-icons/si';
 import { Link } from 'react-router-dom';
 import { SidebarProps } from '../types/Section';
 import { IoMdExit } from 'react-icons/io';
+import viteLogo from '../assets/vite.svg'
 
 interface SidebarComponentProps extends SidebarProps {
     isOpen: boolean;
@@ -35,14 +36,15 @@ const Sidebar: React.FC<SidebarComponentProps> = ({ sections, isOpen, toggleSide
                         viteconfig.js
                     </h2>
                 </Link> */}
-                {/* Navigatsiya qismini sticky qilib qo'yish */}
                 <nav className="sticky top-16 overflow-y-auto">
                     <ul>
-                        <div className='-mt-8'>
-
+                        <div>
                             <Link to={"/"}>
-                                <h2 className="flex items-center gap-3 text-2xl font-bold mb-6">
-                                    <SiVite />
+                                <h2 className="flex bg-gradient-to-r from-purple-500 via-yellow-500 to-indigo-400 text-transparent bg-clip-text items-center gap-3 text-2xl font-bold mb-6">
+                                    <div className='text-white'>
+                                        {/* <SiVite /> */}
+                                        <img src={viteLogo} className='w-6' alt="Vite Logo" />
+                                    </div>
                                     viteconfig.js
                                 </h2>
                             </Link>

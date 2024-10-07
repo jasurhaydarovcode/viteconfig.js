@@ -21,3 +21,12 @@ body {
 code {
     user-select: text;
 }
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1f2937;
+    border-radius: 2px;
+}
