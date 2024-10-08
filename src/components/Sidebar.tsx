@@ -38,14 +38,14 @@ const Sidebar: React.FC<SidebarComponentProps> = ({ sections, isOpen, toggleSide
                 <nav className="sticky top-16 overflow-y-auto">
                     <ul>
                         <div>
-                            <Link to={"/"}>
-                                <h2 className="flex bg-gradient-to-r from-purple-500 via-yellow-500 to-indigo-400 text-transparent bg-clip-text items-center gap-3 text-2xl font-bold mb-6">
-                                    <div className='text-white'>
-                                        <img src={viteLogo} className='w-6' alt="Vite Logo" />
-                                    </div>
-                                    viteconfig.js
-                                </h2>
-                            </Link>
+                            {/* <Link to={"/"}> */}
+                            <h2 className="flex bg-gradient-to-r from-purple-500 via-yellow-500 to-indigo-400 text-transparent bg-clip-text items-center gap-3 text-2xl font-bold mb-6">
+                                <div className='text-white'>
+                                    <img src={viteLogo} className='w-6' alt="Vite Logo" />
+                                </div>
+                                viteconfig.js
+                            </h2>
+                            {/* </Link> */}
                         </div>
                         <Link to={"/"}>
                             <li className='mb-4 text-xl font-semibold flex items-center gap-3 hover:text-blue-400'>

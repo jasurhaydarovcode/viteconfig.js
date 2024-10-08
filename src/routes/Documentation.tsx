@@ -14,7 +14,15 @@ const Documentation: React.FC = () => {
     return (
         <div>
             <Helmet>
-                <title>Documentation</title>
+                <title>Documentation - ViteConfig.js Guide</title>
+                <meta name="description" content="A complete guide to configuring and using Vite with React for modern web development." />
+                <meta name="keywords" content="Vite documentation, React, TailwindCSS, frontend guide, web development" />
+                <meta name="author" content="Your Name" />
+                <meta property="og:title" content="Documentation - ViteConfig.js Guide" />
+                <meta property="og:description" content="Step-by-step guide on configuring and optimizing Vite for React projects with TailwindCSS." />
+                <meta property="og:image" content="link_to_your_documentation_image.png" />
+                <meta property="og:url" content="https://viteconfig-js.vercel.app/documentation" />
+                <link rel="canonical" href="https://viteconfig-js.vercel.app/documentation" />
             </Helmet>
 
             {/* Container flex */}

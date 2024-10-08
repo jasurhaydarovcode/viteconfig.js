@@ -74,13 +74,23 @@ export default defineConfig({
                     </div>
                 )}
 
-                <Link
-                    to={"/documentation"}
-                    rel="noopener noreferrer"
-                    className="mt-6 text-blue-500 underline hover:text-blue-700 transition"
-                >
-                    Documentation
-                </Link>
+                <div className='flex items-center gap-5'>
+                    <Link
+                        to={"/documentation"}
+                        rel="noopener noreferrer"
+                        className="mt-6 text-blue-500 underline hover:text-blue-700 transition"
+                    >
+                        Documentation
+                    </Link>
+
+                    <Link
+                        to={"/examples"}
+                        rel="noopener noreferrer"
+                        className="mt-6 text-blue-500 underline hover:text-blue-700 transition"
+                    >
+                        Examples
+                    </Link>
+                </div>
             </div>
         </div>
     );
