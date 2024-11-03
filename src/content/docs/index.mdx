@@ -7,11 +7,11 @@ hero:
   image:
     file: ../../assets/vite.png
   actions:
-    - text: Example Guide
+    - text: Default vite config
       link: /guides/example/
       icon: right-arrow
     - text: Read the Starlight docs
-      link: https://starlight.astro.build
+      link: /guides/example/
       icon: external
       variant: minimal
 ---
@@ -21,16 +21,38 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 ## Next steps
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+	<Card title="Default config for jsx" icon="pencil">
+        ```
+        import { defineConfig } from 'vite'
+        import react from '@vitejs/plugin-react'
+
+        // https://vite.dev/config/
+        export default defineConfig({
+        plugins: [react()],
+        })
+        ```
+    </Card>
+	<Card title="Default config for tsx" icon="add-document">
+        ```
+        import { defineConfig } from 'vite'
+        import react from '@vitejs/plugin-react'
+
+        // https://vite.dev/config/
+        export default defineConfig({
+        plugins: [react()],
+        })
+        ```
+    </Card>
+
+[//]: # (<Card title="Configure your site" icon="setting">)
+
+[//]: # (	Edit your `sidebar` and other config in `astro.config.mjs`.)
+
+[//]: # (</Card>)
+
+[//]: # (<Card title="Read the docs" icon="open-book">)
+
+[//]: # (	Learn more in [the Starlight Docs]&#40;https://starlight.astro.build/&#41;.)
+
+[//]: # (</Card>)
 </CardGrid>

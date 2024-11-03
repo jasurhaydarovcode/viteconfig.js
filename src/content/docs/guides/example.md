@@ -1,11 +1,18 @@
 ---
-title: Example Guide
+title: Default vite config
 description: A guide in my new Starlight docs site.
 ---
 
-Guides lead a user through a specific task they want to accomplish, often with a sequence of steps.
-Writing a good guide requires thinking about what your users are trying to do.
+## `vite.config.js` for React and JSX
 
-## Further reading
+When using Vite with React and JSX, the default configuration in `vite.config.js` is minimal, but it's flexible and can be customized. Here’s a basic setup for `vite.config.js` that supports React:
 
-- Read [about how-to guides](https://diataxis.fr/how-to-guides/) in the Diátaxis framework
+```js
+// vite.config.js
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()], // Adds support for React and JSX syntax
+});
+```
